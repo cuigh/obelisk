@@ -2,11 +2,11 @@
 
 ## 下载
 
-你可以从这里下载最新版本的 [Obelisk](https://github.com/cuigh/obelisk/releases)。
+你可以从这里下载最新版本的 [Obelisk](https://github.com/cuigh/obelisk/releases)。Obelisk 在运行时不依赖任何第三方工具或类库，所以你只需要下载它的二进制可执行文件即可。
 
 ## 使用
 
-下载 Obelisk 并把它解压到系统 PATH 目录后，就可以通过下面的命令把 Markdown 文档仓库生成静态 HTML 页面。
+下载 Obelisk 并把它解压到系统 PATH 目录后，使用下面的命令就可以把 Markdown 文档仓库生成静态 HTML 页面。
 
 ```shell
 obelisk build -v /folder/to/vault -o /folder/to/output
@@ -21,7 +21,7 @@ build 命令的完整参数见下表。
 | o, output | output path, required                                |
 | h, help   | show help                                            |
 
-如果你希望设置生成页面的样式，你可以参考 [[02 Theme]] 章节。
+如果你希望设置生成页面的样式，可以参考 [[02 Theme|Theme]] 章节。
 
 ## 约定
 
@@ -34,18 +34,31 @@ build 命令的完整参数见下表。
 | 源文件名            | 目标文件名         |
 | ------------------- | ------------------ |
 | 00 Home.md          | home.html          |
-| 01 Reading notes.md | reading-notes.html |
+| 01 Reading Notes.md | reading-notes.html |
 
 ### URL
 
-默认情况下，Obelisk 会按照 Kebe 方式对文件和文件夹名称进行转换，比如 Test Aaa 会转换成 test-aaa。除此之外，你也可以通过其它方式来指定页面 URL。
+默认情况下，Obelisk 会按照 Kebab 风格对文件和文件夹名称进行转换，比如 ==Reading Notes== 会转换成 ==reading-notes==。除此之外，你也可以通过其它方式来指定页面 URL。
 
-- 通过在文档 metadata 中添加 slug 属性
-- 在仓库配置文件中添加路径映射。注意路径映射只
+- 在文档 metadata 中添加 slug 属性
+- 在仓库配置文件中添加路径映射
 
 ### Favicon
 
+Obelisk 会依次查找文档库是否存在如下文件，如果能够找到会自动把它设置成网站的 Favicon。
+
+- assets/favicon.ico
+- assets/favicon.png
+- assets/favicon.svg
+- assets/logo.png
+- assets/logo.svg
+
 ### Logo
+
+同 Favicon 类似，Obelisk 会依次查找文档库是否存在如下图片文件，一旦找到会自动把它设置成网站的 Logo。
+
+- assets/logo.png
+- assets/logo.svg
 
 ### Ignore Path
 

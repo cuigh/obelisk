@@ -28,7 +28,7 @@ Obelisk is a publishing tool for markdown document library, which can help you g
 
 ## Getting Started
 
-Please follow the [Documentation](https://cuigh.com/obelisk).
+Please follow the [Documentation](https://cuigh.com/obelisk). As you might expect, the document site is also generated with Obelisk.
 
 ## Roadmap
 
