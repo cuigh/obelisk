@@ -1,0 +1,4 @@
+<div class="banner {{.Style}}">
+    {{- if .Image}}<img class="image" draggable="false" style="object-position: {{.X}}% {{.Y}}%" src="{{.Image}}" alt="banner">{{end -}}
+    {{- if .Icon}}<img class="icon" draggable="false" alt="{{.Icon}}" src="https://twemoji.maxcdn.com/v/latest/72x72/{{.IconUnicode}}.png">{{end -}}
+</div>
