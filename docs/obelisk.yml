@@ -1,0 +1,6 @@
+name: Obelisk
+url: https://github.com/cuigh/obelisk
+lang: en
+copyright: "© 2021-2022 cuigh. All rights reserved."
+ignores:
+  - assets
