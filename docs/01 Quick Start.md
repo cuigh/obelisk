@@ -1,51 +1,55 @@
-# 快速上手
+# Quick start
 
-## 下载
+## Download
 
-你可以从这里下载最新版本的 [Obelisk](https://github.com/cuigh/obelisk/releases)。Obelisk 在运行时不依赖任何第三方工具或类库，所以你只需要下载它的二进制可执行文件即可。
+You can download the lastest version from here: [Obelisk](https://github.com/cuigh/obelisk/releases). Obelisk does not rely on any third-party tools or class libraries at runtime, so you only need to download its binary executable.
 
-## 使用
+## Usage
 
-下载 Obelisk 并把它解压到系统 PATH 目录后，使用下面的命令就可以把 Markdown 文档仓库生成静态 HTML 页面。
+After downloading Obelisk and decompressing it to the system ==PATH== directory, you can generate static HTML pages from the markdown document vault with the following command.
 
 ```shell
 obelisk build -v /folder/to/vault -o /folder/to/output
 ```
 
-build 命令的完整参数见下表。
+The complete parameters of the `build` command are shown in the following table.
 
-| 参数      | 说明                                                 |
+| Argument  | Description                                          | 
 | --------- | ---------------------------------------------------- |
 | v, vault  | document vault path, required                        |
 | t, theme  | internal theme name or external theme path, optional |
 | o, output | output path, required                                |
 | h, help   | show help                                            |
 
-如果你希望设置生成页面的样式，可以参考 [[02 Theme|Theme]] 章节。
+If you want to set the style of the generated pages, you can refer to the chapter [[02 Theme|Theme]].
 
-## 约定
+## Convention
 
-为简化使用，Obelisk 遵循约定高于配置的原则。
+In order to simplify use, Obelisk follows the principle that convention is higher than configuration.
 
-### 导航排序
+### Navigation
 
-默认情况下，导航菜单以文件名进行排序，但这很可能不是你想要的。当文件或文件夹的名称以数字开头时，Obelisk 会自动提取数字作为顺序号，然后用升序进行排序，所有不以数字开头的文件名的序号都默认为 999。在提取顺序号之后，Obelisk 还会贴心的把顺序号从标题中移除，以便让导航菜单和 URL 看起来更舒服。示例如下：
+By default, navigation menus are sorted by file name, but this is probably not what you want. When the name of a file or folder starts with a number, Obelisk will automatically extract the number as the sequence number, and then sort it in ascending order. The serial number of all file names that do not start with a number is set to 999 by default. After extracting the sequence number, Obelisk will also carefully remove the sequence number from the title to make the navigation menu and URL look more comfortable. Examples are as follows:
 
-| 源文件名            | 目标文件名         |
+| Source Name         | Target Name        |
 | ------------------- | ------------------ |
 | 00 Home.md          | home.html          |
 | 01 Reading Notes.md | reading-notes.html |
 
 ### URL
 
-默认情况下，Obelisk 会按照 Kebab 风格对文件和文件夹名称进行转换，比如 ==Reading Notes== 会转换成 ==reading-notes==。除此之外，你也可以通过其它方式来指定页面 URL。
+By default, Obelisk will convert file and folder names according to kebab style. For example, ==Reading Notes== will be converted to ==reading-notes==. In addition, you can specify the page URL in other ways.
 
-- 在文档 metadata 中添加 slug 属性
-- 在仓库配置文件中添加路径映射
+- Add `slug` attribute in document metadata
+- Add path mapping in vault configuration file (obelisk.yml)
+```yaml
+paths:  
+  - Reading Notes: reading-notes
+```
 
 ### Favicon
 
-Obelisk 会依次查找文档库是否存在如下文件，如果能够找到会自动把它设置成网站的 Favicon。
+Obelisk will check whether the following files exist in the document library in turn. If it can be found, it will be automatically set as the favicon of the website.
 
 - assets/favicon.ico
 - assets/favicon.png
@@ -55,14 +59,14 @@ Obelisk 会依次查找文档库是否存在如下文件，如果能够找到会
 
 ### Logo
 
-同 Favicon 类似，Obelisk 会依次查找文档库是否存在如下图片文件，一旦找到会自动把它设置成网站的 Logo。
+Similar to favicon, Obelisk will check whether the following image files exist in the document library in turn. Once found, Obelisk will automatically set it as the logo of the website.
 
 - assets/logo.png
 - assets/logo.svg
 
 ### Ignore Path
 
-你可能希望在发布时隐藏文档库的部分目录或文件，比如未完工的草稿文件夹或附件文件夹。Obelisk 支持忽略指定的文件夹，这些目录下的文件将不会作为文档输出成 HTML 页面，也不会出现在导航菜单中（但不会影响其它页面对它作为资源文件的引用）。如果你不对文档库进行配置，Obelisk 默认会忽略如下目录：
+You may want to hide some directories or files of the document library when publishing, such as unfinished drafts or attachments. Obelisk supports ignoring the specified folders. The files in these directories will not be output as documents into HTML pages or appear in the navigation menu (but will not affect the reference of other pages to it as resource files). If you do not configure the document library, Obelisk will ignore the following directories by default.
 
 - assets
 - templates
