@@ -1,5 +1,5 @@
 ---
-obelisk_toc: false
+toc: false
 slug: index
 banner: "assets/banner.png"
 banner_y: 0.46586
@@ -20,6 +20,8 @@ Obelisk is a publishing tool for markdown document library, which can help you g
 	- Banner
 	- Admonition
 	- Icon Folder
+	- Kanban
+	- Charts
 	- ……
 
 ## Screenshots

@@ -49,6 +49,10 @@ Please follow the [Documentation](https://cuigh.com/obelisk). As you might expec
 	- [x] Excalidraw
 	- [x] Admonition
 	- [x] Icon Folder
+	- [x] Kanban
+	- [x] Charts
+	- [ ] Timeline
 - [x] Theme
 - [x] Search
+- [x] Graph
 - [x] Back links

@@ -49,6 +49,10 @@ Obelisk 是一个 Markdown 文档库发布工具，它能够简单、快速的�
 	- [x] Excalidraw
 	- [x] Admonition
 	- [x] Icon Folder
+	- [x] Kanban
+	- [x] Charts
+	- [ ] Timeline
 - [x] Theme
 - [x] Search
+- [x] Graph
 - [x] Back links

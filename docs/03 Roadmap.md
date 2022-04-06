@@ -1,0 +1,26 @@
+## Roadmap
+
+- [x] CommonMark
+- [x] GFM Extensions
+- [x] Callout
+- [x] LaTeX
+- [x] Comment
+- [ ] Embed
+	- [x] Image
+	- [x] Audio
+	- [x] Video
+	- [x] Excalidraw
+	- [x] PDF
+	- [ ] Markdown
+- [x] Plugin
+	- [x] Banner
+	- [x] Excalidraw
+	- [x] Admonition
+	- [x] Icon Folder
+	- [x] Kanban
+	- [x] Charts
+	- [ ] Timeline
+- [x] Theme
+- [x] Search
+- [x] Graph
+- [x] Back links
