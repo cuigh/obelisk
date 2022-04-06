@@ -29,6 +29,16 @@
         }
     }
 
+    function chart(container) {
+        const elems = container.querySelectorAll("div.chart")
+        for (let elem of elems) {
+            const span = elem.querySelector('span')
+            const cfg = JSON.parse(span.innerText)
+            new Chart(elem.querySelector('canvas'), cfg)
+            span.remove()
+        }
+    }
+
     function debounce(fn, wait) {
         let timeout = null;      //定义一个定时器
         return function () {
@@ -132,10 +142,14 @@
     function Backdrop() {
         let active = null;
         const backdrop = document.querySelector('body>.backdrop')
-
-        on(backdrop, 'click', e => {
+        const close = () => {
             active && active.classList.remove('show')
             backdrop.classList.remove('show')
+        }
+
+        on(backdrop, 'click', close)
+        on(document, 'keyup', e => {
+            e.key === 'Escape' && close()
         })
 
         return (elem) => {
@@ -197,7 +211,8 @@
 
     function TOC() {
         const marker = document.getElementById('toc-marker')
-        if (!marker) return () => {}
+        if (!marker) return () => {
+        }
 
         const links = new Map()
         document.getElementById('toc').querySelectorAll('li>a').forEach(e => {
@@ -256,7 +271,7 @@
         const message = Message()
         const toc = new TOC()
         const backdrop = Backdrop()
-        let chart = null;
+        let graph = null;
 
         // nav
         on(document.getElementById('nav'), 'click', function (e) {
@@ -280,11 +295,12 @@
         // search
         on(document, 'click', () => sr.style.display = 'none')
         on(document, 'keyup', e => {
-            (e.key === 's' && e.ctrlKey) && si.focus()
+            e.key === '/' && si.focus()
         })
         on(sr, 'click', function (e) {
             e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
             const elem = e.target.closest('.suggestion-item');
+            sr.style.display = 'none'
             redirect(elem.dataset['url'])
         })
         on(si, 'click', function (e) {
@@ -315,6 +331,7 @@
                 select(sr, false)
             } else if (e.keyCode === 13) { // enter
                 const elem = sr.querySelector('.active')
+                sr.style.display = 'none'
                 redirect(elem.dataset['url'])
             }
         })
@@ -345,14 +362,15 @@
         on(document.getElementById('graph-switcher'), 'click', e => {
             const elem = document.querySelector('body>.graph')
             backdrop(elem)
-            if (chart) {
-                chart.resize()
+            if (graph) {
+                graph.resize()
             } else {
-                chart = Graph(elem)
+                graph = Graph(elem)
             }
         })
 
         toc(0)
         excalidraw()
+        chart(main)
     });
 })(window)
