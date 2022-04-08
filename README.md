@@ -1,6 +1,6 @@
 [English](https://github.com/cuigh/obelisk) | [中文](https://github.com/cuigh/obelisk/blob/master/README_zh.md)
 
-Obelisk is a publishing tool for markdown document library, which can help you generate HTML documents simply and quickly. In particular, out of personal preference, Obelisk has made a lot of optimization for the [Obsidian](https://obsidian.md) document library, which can be used as an alternative to the official publishing service.
+Obelisk is a publishing tool for markdown document library, which can help you generate HTML documents simply and quickly. In particular, out of personal preference, Obelisk has made a lot of optimization for the [Obsidian](https://obsidian.md) document library, and can be used as an alternative to the official publishing service.
 
 ## Features
 
@@ -11,7 +11,7 @@ Obelisk is a publishing tool for markdown document library, which can help you g
 - Support some mainstream plugins of the Obsidian community
 	- Excalidraw
 	- Banner
-	- Admonition
+	- Kanban
 	- Icon Folder
 	- ……
 
@@ -37,13 +37,13 @@ Please follow the [Documentation](https://cuigh.com/obelisk). As you might expec
 - [x] Callout
 - [x] LaTeX
 - [x] Comment
-- [ ] Embed
+- [x] Embed
 	- [x] Image
 	- [x] Audio
 	- [x] Video
 	- [x] Excalidraw
 	- [x] PDF
-	- [ ] Markdown
+	- [x] Markdown
 - [x] Plugin
 	- [x] Banner
 	- [x] Excalidraw
@@ -51,7 +51,7 @@ Please follow the [Documentation](https://cuigh.com/obelisk). As you might expec
 	- [x] Icon Folder
 	- [x] Kanban
 	- [x] Charts
-	- [ ] Timeline
+	- [x] Timeline
 - [x] Theme
 - [x] Search
 - [x] Graph

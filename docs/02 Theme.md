@@ -4,7 +4,7 @@ Obelisk fully understood everyone's personalized needs, so it added support for 
 
 ## Built in themes
 
-At present, Obelisk has built-in willow and coco themes (since the author is not a professional designer after all, please forgive me if you think the style is not to your taste). To use the built-in theme, you only need to pass the theme name to the theme parameter, as shown below.
+At present, Obelisk has built-in willow and coco themes (Since I'm not a professional designer after all, please forgive me if the style is not to your taste). To use the built-in theme, you only need to pass the theme name to the theme parameter, as shown below.
 
 ```shell
 obelisk build -v /folder/to/vault -o /folder/to/output -t willow

@@ -11,7 +11,7 @@ Obelisk 是一个 Markdown 文档库发布工具，它能够简单、快速的�
 - 支持 Obsidian 社区的一些主流插件
 	- Excalidraw
 	- Banner
-	- Admonition
+	- Kanban
 	- Icon Folder
 	- ……
 
@@ -37,13 +37,13 @@ Obelisk 是一个 Markdown 文档库发布工具，它能够简单、快速的�
 - [x] Callout
 - [x] LaTeX
 - [x] Comment
-- [ ] Embed
+- [x] Embed
 	- [x] Image
 	- [x] Audio
 	- [x] Video
 	- [x] Excalidraw
 	- [x] PDF
-	- [ ] Markdown
+	- [x] Markdown
 - [x] Plugin
 	- [x] Banner
 	- [x] Excalidraw
@@ -51,7 +51,7 @@ Obelisk 是一个 Markdown 文档库发布工具，它能够简单、快速的�
 	- [x] Icon Folder
 	- [x] Kanban
 	- [x] Charts
-	- [ ] Timeline
+	- [x] Timeline
 - [x] Theme
 - [x] Search
 - [x] Graph

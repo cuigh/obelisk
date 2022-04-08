@@ -1,26 +1,47 @@
-## Roadmap
+---
+
+kanban-plugin: basic
+
+---
+
+## Markdown
 
 - [x] CommonMark
 - [x] GFM Extensions
 - [x] Callout
 - [x] LaTeX
 - [x] Comment
-- [ ] Embed
-	- [x] Image
-	- [x] Audio
-	- [x] Video
-	- [x] Excalidraw
-	- [x] PDF
-	- [ ] Markdown
-- [x] Plugin
-	- [x] Banner
-	- [x] Excalidraw
-	- [x] Admonition
-	- [x] Icon Folder
-	- [x] Kanban
-	- [x] Charts
-	- [ ] Timeline
+- [x] Embed: Image
+- [x] Embed: Video
+- [x] Embed: Audio
+- [x] Embed: Excalidraw
+- [x] Embed: PDF
+- [x] Embed: Markdown
+
+
+## Plugin
+
+- [x] Banner
+- [x] Excalidraw
+- [x] Admonition
+- [x] Icon Folder
+- [x] Kanban
+- [x] Charts
+- [x] Timeline
+
+
+## Other
+
 - [x] Theme
 - [x] Search
 - [x] Graph
 - [x] Back links
+
+
+
+
+%% kanban:settings
+```
+{"kanban-plugin":"basic"}
+```
+%%
