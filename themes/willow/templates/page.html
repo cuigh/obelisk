@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{- if .Vault.Favicon}}<link rel="icon" href="{{url .Vault.Favicon}}" />{{end -}}
     <title>{{ .Page.Title }}</title>
-    <link href="{{url "assets/css/app.css"}}" rel="stylesheet">
+    <link href="{{url "assets/css/app.css"}}?v={{.Timestamp}}" rel="stylesheet">
 </head>
 
 <body>
@@ -43,7 +43,7 @@
 <div class="container">
     <aside id="aside">
         <nav id="nav">
-            {{- template "menu.html" .Menu -}}
+            {{- template "menu.html" (wrap .Page .Menu) -}}
         </nav>
         <div class="obelisk">Powered by <a href="https://github.com/cuigh/obelisk" target="_blank">Obelisk</a></div>
     </aside>
@@ -138,8 +138,8 @@
 {{- if .Page.Data.MathJax}}<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>{{end -}}
 {{- if .Page.Data.Excalidraw}}<script src="{{url "assets/js/excalidraw-utils.min.js"}}"></script>{{end -}}
 <script async src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
-<script src="{{url "assets/js/data.js"}}"></script>
-<script src="{{url "assets/js/app.js"}}"></script>
+<script src="{{url "assets/js/data.js"}}?v={{.Timestamp}}"></script>
+<script src="{{url "assets/js/app.js"}}?v={{.Timestamp}}"></script>
 </body>
 
 </html>
