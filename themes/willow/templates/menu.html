@@ -1,9 +1,9 @@
 <ul class="menu">
     {{- range .Value.Children -}}
-    <li class="menu-{{if .IsFolder}}folder{{else}}file{{end}}{{if not (.ParentOf $.Context.Node)}} collapsed{{end}}{{if eq . $.Context.Node}} active{{end}}">
+    <li class="menu-{{if .IsFolder}}folder{{else}}file{{end}}{{if and .IsFolder (not (.ParentOf $.Context.Node))}} collapsed{{end}}{{if eq . $.Context.Node}} active{{end}}">
         <div>
             {{- .Icon -}}
-            <a{{- if not .IsFolder }} href="{{url .URL}}"{{end}}>{{.Title}}</a>
+            <a{{- if not .IsFolder }} href="{{url .URL}}" title="{{.Title}}"{{end}}>{{.Title}}</a>
             {{- if .IsFolder}}<svg><use xlink:href="#arrow"/></svg>{{end -}}
         </div>
         {{- if .IsFolder}}{{template "menu.html" (wrap $.Context .)}}{{end -}}

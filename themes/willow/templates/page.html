@@ -55,7 +55,7 @@
             <div id="content" class="content">
                 {{- if .Page.Meta.tags -}}
                 <div class="tags">
-                    {{- range .Page.Meta.tags -}}<span class="tag">{{.}}</span>{{- end}}
+                    {{- range .Page.Meta.tags -}}{{if .}}<span class="hashtag">#{{.}}</span>{{end}}{{- end}}
                 </div>
                 {{- end -}}
                 {{ .Page.Content }}
@@ -111,6 +111,7 @@
 </div>
 <div class="backdrop"></div>
 <div class="graph"></div>
+<div class="taglinks"></div>
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
     <symbol viewBox="0 0 24 24" id="arrow">
         <title>Arrow</title>

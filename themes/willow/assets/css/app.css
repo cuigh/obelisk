@@ -122,6 +122,7 @@ header {
 }
 header .hamburger {
     display: none;
+    min-width: 20px;
 }
 header > .brand {
     font-weight: 500;
@@ -134,8 +135,9 @@ header > .brand {
     gap: 8px;
 }
 header .logo {
-    width: 24px;
-    height: 24px;
+    /*max-height: 32px;*/
+    /*width: 32px;*/
+    height: 32px;
 }
 header .buttons {
     display: flex;
@@ -309,7 +311,6 @@ nav > .menu {
 }
 .menu-folder > .menu {
     overflow: hidden;
-    max-height: 100vh;
     opacity: 100;
     transition: all 200ms ease-in;
 }
@@ -611,9 +612,47 @@ div.links > ul {
     transform: translateX(-50%) translateY(-50%);
     display: none;
 }
-
 .graph.show {
     display: block;
+}
+
+.taglinks {
+    max-height: 80%;
+    width: 50%;
+    background-color: var(--color-back);
+    border-radius: 5px;
+    padding: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: none;
+    flex-direction: column;
+}
+.taglinks.show {
+    display: flex;
+}
+.taglinks > .header {
+    font-size: 1.5em;
+    font-weight: 500;
+    text-align: center;
+    padding-bottom: 12px;
+}
+.taglinks > ol {
+    padding: 6px 6px 6px 48px;
+    overflow-y: auto;
+    background-color: var(--color-back-dark);
+    border-radius: 5px;
+}
+.taglinks li {
+    padding: 4px 0;
+}
+.taglinks .hashtag {
+    color: var(--color-text-light);
+    border: 1px solid var(--color-border);
+    border-radius: 2em;
+    font-size: 0.8em;
+    padding: 2px 8px 3px;
 }
 
 .callout {
@@ -964,6 +1003,7 @@ article {
     border: 1px solid var(--color-border);
     border-radius: 5px;
     padding: 12px;
+    margin: 1em auto;
     position: relative;
 }
 .content .embed > :first-child {
@@ -1449,16 +1489,26 @@ article {
 .content .tags {
     margin-bottom: 16px;
 }
-.content :is(.tag,.hashtag) {
+.content .hashtag {
     color: var(--color-text-light);
     border: 1px solid var(--color-border);
     border-radius: 2em;
     font-size: 0.8em;
     font-weight: 500;
     padding: 2px 8px 3px;
+    cursor: pointer;
 }
-.content .tag:not(:last-child) {
+.content .tags .hashtag:not(:last-child) {
     margin-right: 4px;
+}
+.content span.hashtag:hover {
+    background-color: var(--color-active);
+    color: var(--color-text);
+}
+
+.content button {
+    padding: 3px 5px;
+    cursor: pointer;
 }
 
 @media (max-width: 640px) {

@@ -63,8 +63,17 @@
         }
 
         const r = new RegExp(text, "gi");
-        return obelisk.indexes.filter(idx => r.test(idx.title) || r.test(idx.path))
-            .map((idx, n) => `<div class="suggestion-item${!n ? ' active' : ''}" data-url="${idx.url}">
+        const arr = []
+        for (let i = 0; i < obelisk.indexes.length; i++) {
+            const idx = obelisk.indexes[i]
+            if (r.test(idx.title) || r.test(idx.path)) {
+                arr.push(idx)
+                if (arr.length >= 50) {
+                    break
+                }
+            }
+        }
+        return arr.map((idx, n) => `<div class="suggestion-item${!n ? ' active' : ''}" data-url="${idx.url}">
         <div class="suggestion-title"><span>${highlight(idx.title, r)}</span><span class="suggestion-type">${idx.type || ''}</span></div>
         <div class="suggestion-note">${highlight(idx.path, r)}</div>
     </div>`)
@@ -169,7 +178,7 @@
                     layout: 'force',
                     label: {
                         show: true,
-                        fontSize: 10,
+                        fontSize: 8,
                         position: 'bottom',
                         formatter: '{b}'
                     },
@@ -349,6 +358,22 @@
                     message('error', err)
                 })
             })
+        })
+
+        // tag links
+        on(main, 'click', e => {
+            if (e.target.matches('span.hashtag')) {
+                const elem = document.querySelector('body>.taglinks')
+                backdrop(elem)
+
+                const base = '/' + document.getElementsByTagName('html')[0].dataset['url']
+                const tag = e.target.textContent.substring(1)
+                const html = '<ol>' + obelisk.indexes.filter(idx => idx.tags?.includes(tag)).map(idx => {
+                    const href = relativeTo(base, '/' + idx.url)
+                    return `<li><a href="${href}">${idx.title}</a></li>`
+                }).join('') + '</ol>'
+                elem.innerHTML = `<div class="header">Pages with tag <span class="hashtag">#${tag}</span></div>` + html
+            }
         })
 
         // callout
