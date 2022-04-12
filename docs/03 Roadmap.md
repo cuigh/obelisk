@@ -36,6 +36,7 @@ kanban-plugin: basic
 - [x] Search
 - [x] Graph
 - [x] Back links
+- [x] Tag links
 
 
 

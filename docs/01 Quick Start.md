@@ -29,12 +29,18 @@ In order to simplify use, Obelisk follows the principle that convention is highe
 
 ### Navigation
 
-By default, navigation menus are sorted by file name, but this is probably not what you want. When the name of a file or folder starts with a number, Obelisk will automatically extract the number as the sequence number, and then sort it in ascending order. The serial number of all file names that do not start with a number is set to 999 by default. After extracting the sequence number, Obelisk will also carefully remove the sequence number from the title to make the navigation menu and URL look more comfortable. Examples are as follows:
+By default, Obelisk use filename as menu title and navigation menus are sorted by file name, but this is probably not what you want. Obelisk supports three ways to process page paths. You can configure `path_formatter` in `obelisk.yml` file.
 
-| Source Name         | Target Name        |
-| ------------------- | ------------------ |
-| 00 Home.md          | home.html          |
-| 01 Reading Notes.md | reading-notes.html |
+- **kebab**: With this value, Obelisk will convert filename to lower case and replace whitespace with strikethrough. This is the default.
+- **smart**: When the name of a file or folder starts with a number, Obelisk will automatically extract the number as the sequence number, and then sort it in ascending order. The serial number of all file names that do not start with a number is set to 999 by default. After extracting the sequence number, Obelisk will also carefully remove the sequence number from the title to make the navigation menu and URL look more comfortable. 
+- **none**: Convert filename to lower case only.
+
+For example:
+
+| Source Name         | Kebab                 | Smart              | None                  |
+| ------------------- | --------------------- | ------------------ | --------------------- |
+| 00 Home.md          | 00-home.html          | home.html          | 00 home.html          |
+| 01 Reading Notes.md | 01-reading-notes.html | reading-notes.html | 01 reading notes.html |
 
 ### URL
 
@@ -51,6 +57,9 @@ paths:
 
 Obelisk will check whether the following files exist in the document library in turn. If it can be found, it will be automatically set as the favicon of the website.
 
+- favicon.ico
+- favicon.png
+- favicon.svg
 - assets/favicon.ico
 - assets/favicon.png
 - assets/favicon.svg
@@ -63,11 +72,15 @@ Similar to favicon, Obelisk will check whether the following image files exist i
 
 - assets/logo.png
 - assets/logo.svg
+- logo.png
+- logo.svg
 
 ### Ignore Path
 
 You may want to hide some directories or files of the document library when publishing, such as unfinished drafts or attachments. Obelisk supports ignoring the specified folders. The files in these directories will not be output as documents into HTML pages or appear in the navigation menu (but will not affect the reference of other pages to it as resource files). If you do not configure the document library, Obelisk will ignore the following directories by default.
 
-- assets
-- templates
-- attachments
+- assets/*
+- templates/*
+- attachments/*
+- *.css
+- *.js

@@ -56,3 +56,4 @@ Please follow the [Documentation](https://cuigh.com/obelisk). As you might expec
 - [x] Search
 - [x] Graph
 - [x] Back links
+- [x] Tag links

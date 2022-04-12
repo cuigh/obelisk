@@ -4,6 +4,15 @@ layout: timeline
 
 # Changelog
 
+## v0.7.0 @{2022-04-12}
+- Change default path formatter from `smart` to `kebab`
+- Clicking tag will pop up all page links containing that tag
+- Convert vault name to title case if name isn't specificated
+- Use wildcard match to ignore files
+- All JS/CSS files are ignored by default
+- Fix comment parsing
+- Fix styles causing menu items to not be displayed in full
+
 ## v0.6.0 @{2022-04-08}
 - Add support for timeline (Set layout as 'timeline' in metadata)
 - Add timestamp to internal js/css resources
