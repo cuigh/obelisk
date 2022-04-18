@@ -15,6 +15,10 @@ Obelisk 是一个 Markdown 文档库发布工具，它能够简单、快速的�
 	- Icon Folder
 	- ……
 
+## 快速上手
+
+请参考这里的 [使用文档](https://cuigh.com/obelisk)。如你所料，文档站点也正是用 Obelisk 生成的。
+
 ## 屏幕截图
 
 **文档**
@@ -25,10 +29,6 @@ Obelisk 是一个 Markdown 文档库发布工具，它能够简单、快速的�
 
 **扩展**
 ![Extensions](docs/assets/extension.png)
-
-## 快速上手
-
-请参考这里的 [使用文档](https://cuigh.com/obelisk)。如你所料，文档站点也正是用 Obelisk 生成的。
 
 ## 路线图
 

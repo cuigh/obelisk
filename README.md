@@ -15,6 +15,10 @@ Obelisk is a publishing tool for markdown document library, which can help you g
 	- Icon Folder
 	- ……
 
+## Getting Started
+
+Please follow the [Documentation](https://cuigh.com/obelisk). As you might expect, the document site is also generated with Obelisk.
+
 ## Screenshots
 
 **Document**
@@ -25,10 +29,6 @@ Obelisk is a publishing tool for markdown document library, which can help you g
 
 **Extensions**
 ![Extensions](docs/assets/extension.png)
-
-## Getting Started
-
-Please follow the [Documentation](https://cuigh.com/obelisk). As you might expect, the document site is also generated with Obelisk.
 
 ## Roadmap
 

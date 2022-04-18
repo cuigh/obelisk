@@ -379,7 +379,7 @@ nav > .menu {
     z-index: 60;
     width: 100%;
     max-height: 80vh;
-    margin-top: 1px;
+    margin-top: 3px;
     color: var(--color-text);
     background-color: var(--color-back);
 }
@@ -1005,18 +1005,26 @@ article {
     padding: 12px;
     margin: 1em auto;
     position: relative;
+    box-shadow: 0 0 4px 2px var(--color-shadow);
 }
-.content .embed > :first-child {
+.content .embed-content > :first-child {
     margin-top: 0;
 }
-.content .embed > :last-child {
+.content .embed-content > :last-child {
     margin-bottom: 0;
 }
-/*.content .embed .embed-link {*/
-/*    position: absolute;*/
-/*    right: 12px;*/
-/*    top: 12px;*/
-/*}*/
+.content .embed-link {
+    position: absolute;
+    right: 9px;
+    top: 6px;
+    color: var(--color-text-faint);
+}
+.content .embed-link:hover {
+    color: var(--color-accent);
+}
+.content .embed-link svg {
+    fill: currentColor;
+}
 
 .content .footnotes p {
     margin: 8px 0;
@@ -1257,6 +1265,10 @@ article {
 .content details {
     margin-top: 0;
     margin-bottom: 1em;
+}
+
+.content p:empty {
+    display: none;
 }
 
 .content blockquote>:first-child {

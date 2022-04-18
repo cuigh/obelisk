@@ -50,7 +50,7 @@ By default, Obelisk will convert file and folder names according to kebab style.
 - Add path mapping in vault configuration file (obelisk.yml)
 ```yaml
 paths:  
-  - Reading Notes: reading-notes
+  Reading Notes: reading-notes
 ```
 
 ### Favicon
