@@ -4,6 +4,11 @@ layout: timeline
 
 # Changelog
 
+## v0.8.0 @{2022-04-21}
+- Add init command to generate obelisk.yml file
+- Add template functions: lower/upper/trim/replace
+- You can now customize page template with `template` attribute in metadata (default is `page.html`)
+
 ## v0.7.1 @{2022-04-18}
 - Fix document embedding when target section has sub sections
 - Add link of target page to embed block
@@ -19,7 +24,7 @@ layout: timeline
 - Fix styles causing menu items to not be displayed in full
 
 ## v0.6.0 @{2022-04-08}
-- Add support for timeline (Set layout as `timeline` in metadata)
+- Add support for timeline (set layout as `timeline` in metadata)
 - Add timestamp to internal js/css resources
 - Support markdown embedding of Obsidian vault
 - Turn consecutive images into columns

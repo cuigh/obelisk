@@ -61,7 +61,11 @@ Obelisk is developed in Go language, and the page template in its theme also ado
 
 In addition to the built-in functions of the Go template, Obelisk also adds the following functions to the template engine.
 
-| Function | Description                          |
-| -------- | ------------------------------------ |
-| wrap     | wrap a value with context            |
-| url      | convert relative url to corrent path | 
+| Function | Description                                  |
+| -------- | -------------------------------------------- |
+| wrap     | wrap a value with context                    |
+| url      | convert relative url to corrent path         |
+| trim     | removes all leading and trailing white space |
+| replace  | replaces all matches                         | 
+| lower    | makes input string lowercase                 |
+| upper    | makes input string uppercase                 |

@@ -1,8 +1,17 @@
 name: Obelisk
-version: v0.7.0
-url: https://github.com/cuigh/obelisk
+version: v0.8.0
+url: https://cuigh.com/obelisk
+source_url: https://github.com/cuigh/obelisk
 lang: en
+languages:
+  zh: zh
+  en: en
 copyright: "© 2021-2022 cuigh. All rights reserved."
 ignores:
   - assets
 path_formatter: smart
+path:
+  sort: folder-first
+  formatter: kebab
+  replace:
+    aaa: bbb
